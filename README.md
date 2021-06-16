@@ -1,1 +1,1 @@
-"# Commands using Symfony"
+# Commands using Symfony
