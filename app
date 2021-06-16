@@ -6,4 +6,6 @@ use Symfony\Component\Console\Application as App;
 
 $app = new App("Task Skillbox Command");
 
+$app->add(new \App\GetInfoUserCommand());
+
 $app->run();
