@@ -8,5 +8,6 @@ $app = new App("Task Skillbox Command");
 
 $app->add(new \App\SayHelloCommand);
 $app->add(new \App\ShowByTimesCommand());
+$app->add(new \App\GetInfoUserCommand());
 
 $app->run();
