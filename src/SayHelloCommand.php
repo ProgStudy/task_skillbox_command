@@ -16,7 +16,7 @@ class SayHelloCommand extends Command
         $this
             ->setName('say_hello')
             ->setDescription("Show message hello")
-            ->addArgument('message', InputArgument::IS_ARRAY);
+            ->addArgument('message', InputArgument::REQUIRED | InputArgument::IS_ARRAY);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
