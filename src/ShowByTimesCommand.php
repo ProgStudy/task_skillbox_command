@@ -16,14 +16,14 @@ class ShowByTimesCommand extends Command
     {
         $this
             ->setName('show-by-times')
-            ->addArgument('message', InputArgument::IS_ARRAY, 'Сообщение')
-            ->addOption('times', null,  InputOption::VALUE_REQUIRED, 'Сколько повторно вывести?', 1);
+            ->addOption('times', null,  InputOption::VALUE_OPTIONAL, 'Сколько повторно вывести?', 2)
+            ->addArgument('message', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Сообщение');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         for ($i = 0; $i < $input->getOption('times'); $i++) {
-            $output->writeln(preg_replace("/\'?\'/", '', implode(' ', $input->getArgument('message'))));
+            $output->writeln($input->getArgument('message'));
             sleep(1);
         }
 
